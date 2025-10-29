@@ -80,12 +80,6 @@ Outputs you should expect
 - `results/gene_analysis/` — saturation stats, per-taxon root-to-tip distance tables, diagnostic figures
 - `results/figures/` — publication-ready PNGs
 
-Best practices & security
-- Do not commit raw sequencing reads to the repository. Store large data in institutional storage or object storage (S3) and reference paths in `config.yaml`.
-- Keep one SSH key per machine and remove unused keys from GitHub (Settings → SSH and GPG keys).
-- Use branch protection rules on `main` if you want a PR-based workflow for collaborators.
-- Version control any changes to `config.yaml` that reflect analysis runs; keep sensitive credentials out of the repo.
-
 Contributing
 - Use branches for features/bugfixes. Example:
   ```
@@ -96,9 +90,16 @@ Contributing
   ```
 - Open a Pull Request describing the change and link related issues/pull requests.
 
+Best practices & security (for internal use between collaborators)
+- Do not commit raw sequencing reads to the repository. Store large data in institutional storage or object storage (S3) and reference paths in `config.yaml`.
+- Keep one SSH key per machine and remove unused keys from GitHub (Settings → SSH and GPG keys).
+- Use branch protection rules on `main` if you want a PR-based workflow for collaborators.
+- Version control any changes to `config.yaml` that reflect analysis runs; keep sensitive credentials out of the repo.
+
 Contact / citation
-- Primary author: Niklas Dreyer, Méta-plateforme de génomique intégrée, Centre de recherche Azrieli du CHU Sainte-Justine, Montréal, QC, Canada, e-mail: niklasdreyerchen@gmail.com or niklas.dreyer.hsj@ssss.gouv.qc.ca
+- Primary author: Niklas Dreyer, Méta-plateforme de génomique intégrée, Centre de recherche Azrieli du CHU Sainte-Justine, Montréal, QC, Canada, e-mail: niklasdreyerchen@gmail.com (private) or niklas.dreyer.hsj@ssss.gouv.qc.ca (institutional)
 - If you use these scripts in a publication, please cite the corresponding papers and this repo.
 
 Acknowledgements
+-----------------
 The sampling for this project was generously assisted by Pei-Chen "Vanessa" Tsai and Yao-Fong Tsao (Biodiversity Research Center, Taipei, Taiwan). We thank all personnel at the Marine Science Center, Green Island Marine Research Station (Academia Sinica) as well as the Sesoko Station (University of the Ryukyus). Niklas Dreyer greatly acknowledges support from postdoctoral advisor Prof. Gonzalo Giribet from the Museum of Comparative Zoology, Harvard University, USA, where the bioinformatic analyses for this project were carried out.
