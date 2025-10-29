@@ -2,13 +2,15 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![Python](https://img.shields.io/badge/python-3.10%2B-blue)](https://www.python.org/) [![R](https://img.shields.io/badge/R-4.3-orange)](https://www.r-project.org/) [![Status](https://img.shields.io/badge/status-draft-orange)]()
 
+<img width="4292" height="2148" alt="image" src="https://github.com/user-attachments/assets/4d68613f-f6ed-4ba3-ab85-87d3febfce0f" />
+
 Short description
 -----------------
 Reproducible pipeline to assemble, annotate, and analyze mitochondrial genomes of Thecostraca (barnacles). Includes scripts to QC/trim reads, assemble contigs, identify mitochondrial contigs, annotate mitogenomes (MitoZ / MITOS), build reference databases, create per-gene alignments, and infer phylogenies with IQ-TREE2. Downstream comparative and per-gene rate/saturation analyses are implemented in R.
 
 This repository is associated with the article "Mitochondrial genome evolution and rearrangements in barnacles (Crustacea: Thecostraca) revealed by sampling of enigmatic lineages" by Dreyer et al. (under review). 
 
-Key goals
+Key goals:
 - Generate circularized mitogenomes from Illumina paired-end reads.
 - Provide consistent annotation (MitoZ / MITOS) and extract protein-coding genes.
 - Build a reference mitogenome database (Cirripedia + Malacostraca outgroups).
