@@ -1,0 +1,47 @@
+# Basic configuration file. Edit sample names and paths before running.
+project_name: "Barnacle_mitochondrial_genome_evolution"
+workdir: "./"                     # base working directory for outputs
+raw_reads_dir: "data/raw_reads"   # where paired FASTQ files are stored
+results_dir: "results"            # where pipeline outputs will be written
+sample_table:
+  - sample: "Facetotecta_AE"
+    r1: "Facetotecta_AE_R1.fastq.gz"
+    r2: "Facetotecta_AE_R2.fastq.gz"
+  - sample: "Dendrogaster_ludwigi"
+    r1: "Dendrogaster_ludwigi_R1.fastq.gz"
+    r2: "Dendrogaster_ludwigi_R2.fastq.gz"
+
+# Tools / parameters (edit as needed)
+trimmomatic:
+  adapters: "/path/to/TruSeq3-PE.fa"
+  leading: 3
+  trailing: 3
+  slidingwindow: "4:15"
+  minlen: 36
+
+velvet:
+  kmer: 99
+  exp_cov: "-exp_cov"   # placeholder; leave blank or set value
+  cov_cutoff: "auto"
+
+mitoz:
+  threads: 8
+  seq_type: mito
+  workdir: "results/mitoz"
+
+blast:
+  db: "nt"              # or path to local mito db fasta
+  evalue: 1e-10
+
+mafft:
+  maxiterate: 1000
+  auto: true
+
+gblocks:
+  type: "codon"         # use codon or protein blocks depending on sequence type
+
+iqtree:
+  threads: 36
+  bb: 10000
+  alrt: 10000
+  bnni: true

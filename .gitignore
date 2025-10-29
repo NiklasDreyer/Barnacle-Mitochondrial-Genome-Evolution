@@ -1,0 +1,14 @@
+# Ignore results and conda env
+/results/
+data/
+__pycache__/
+*.log
+*.aux
+*.out
+*.err
+*.png
+*.pdf
+.Rhistory
+.RData
+.env
+.envs/
