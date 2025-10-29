@@ -40,13 +40,13 @@ Quick start (minimal)
      ```
 3. Run QC + trim (cluster):
    ```
-   sbatch scripts/slurm/00_qc_trim.slurm
+   sbatch scripts/slurm/00_qc_trim.sh
    ```
 4. Run subsequent pipeline steps in order (or use the Snakemake wrapper if you add one):
-   - `01_assembly_velvet.slurm` → `02_blast_identify.slurm` → extract candidate mito contigs → `03_mitoz_annotate.slurm`
-   - Build reference DB with `05_build_ref_db.slurm` (fill `results/ref_db/accessions.txt` first)
+   - `01_assembly_velvet.sh` → `02_blast_identify.sh` → extract candidate mito contigs → `03_mitoz_annotate.sh`
+   - Build reference DB with `05_build_ref_db.sh` (fill `results/ref_db/accessions.txt` first)
    - Prepare per-gene FASTAs, align with MAFFT, trim with Gblocks
-   - Concatenate and run IQ-TREE: `09_concat_iqtree.slurm`
+   - Concatenate and run IQ-TREE: `09_concat_iqtree.sh`
 
 Short example (local test)
 - Create a small test sample (or subsample reads) and run locally to validate environment and paths:
@@ -54,13 +54,13 @@ Short example (local test)
   # create test read dir and update config.yaml to point to test files
   mkdir -p data/raw_reads
   # run QC/trimming script interactively to verify tools
-  bash scripts/slurm/00_qc_trim.slurm
+  bash scripts/slurm/00_qc_trim.sh
   ```
 - After annotation, extract protein-coding sequences for each taxon into `results/per_gene_fastas/` (one FASTA per gene, taxon names as headers), then:
   ```
-  bash scripts/slurm/07_align_mafft.slurm
-  bash scripts/slurm/08_gblocks_trim.slurm
-  sbatch scripts/slurm/09_concat_iqtree.slurm
+  bash scripts/slurm/07_align_mafft.sh
+  bash scripts/slurm/08_gblocks_trim.sh
+  sbatch scripts/slurm/09_concat_iqtree.sh
   ```
 
 Expanded details / notes
@@ -68,7 +68,7 @@ Expanded details / notes
 - Assembly: Velvet k-mer and coverage settings can be tuned in `config.yaml` or the SLURM script. For mitochondrial genomes, a high k (e.g., 99) often works for 150 bp reads but test alternatives.
 - Annotation: MitoZ is included in the conda environment (pip install). MITOS is typically used on the webserver — see `scripts/slurm/04_mitos_submit.sh` for guidance and where to store outputs.
 - Per-gene FASTA extraction: The repo contains a template script (`scripts/bin/awk_rename_genes.sh`) but you will likely need to adapt it to MitoZ GFF/FASTA outputs. If you provide an example MitoZ output, the extraction script can be made robust.
-- Phylogenetics: We use IQ-TREE2 with ModelFinder+MERGE; recommended settings are in `scripts/slurm/09_concat_iqtree.slurm`. Adjust CPU and memory to your cluster limits.
+- Phylogenetics: We use IQ-TREE2 with ModelFinder+MERGE; recommended settings are in `scripts/slurm/09_concat_iqtree.sh`. Adjust CPU and memory to your cluster limits.
 - R analyses: Scripts in `scripts/R/` implement mitogenome size comparisons and per-gene evolutionary tests (phangorn/ape-based). Use `Rscript` to run them non-interactively.
 
 Outputs you should expect
