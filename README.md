@@ -6,7 +6,7 @@
 
 Project overview
 -----------------
-Reproducible pipeline to assemble, annotate, and analyze mitochondrial genomes of Thecostraca (barnacles). Includes scripts to QC/trim reads, assemble contigs, identify mitochondrial contigs, annotate mitogenomes (MitoZ / MITOS), build reference databases, create per-gene alignments, and infer phylogenies with IQ-TREE2. Downstream comparative and per-gene rate/saturation analyses are implemented in R.
+Reproducible pipeline to assemble, annotate, and analyze mitochondrial genomes of Thecostraca (barnacles). Associated with the paper "Mitochondrial genome evolution and rearrangements in barnacles (Crustacea:Thecostraca) revealved by sampling of enigmatic lineages" by Dreyer et al. (Under review). Includes scripts to QC/trim reads, assemble contigs, identify mitochondrial contigs, annotate mitogenomes (MitoZ / MITOS), build reference databases, create per-gene alignments, and infer phylogenies with IQ-TREE2. Downstream comparative and per-gene rate/saturation analyses are implemented in R.
 
 Key goals
 - Generate circularized mitogenomes from Illumina paired-end reads.
