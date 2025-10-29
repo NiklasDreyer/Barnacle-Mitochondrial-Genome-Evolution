@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![Python](https://img.shields.io/badge/python-3.10%2B-blue)](https://www.python.org/) [![R](https://img.shields.io/badge/R-4.3-orange)](https://www.r-project.org/) [![Status](https://img.shields.io/badge/status-draft-orange)]()
 
-Short description
+Project overview
 -----------------
 Reproducible pipeline to assemble, annotate, and analyze mitochondrial genomes of Thecostraca (barnacles). Includes scripts to QC/trim reads, assemble contigs, identify mitochondrial contigs, annotate mitogenomes (MitoZ / MITOS), build reference databases, create per-gene alignments, and infer phylogenies with IQ-TREE2. Downstream comparative and per-gene rate/saturation analyses are implemented in R.
 
