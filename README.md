@@ -1,4 +1,4 @@
-# Barnacle_mitochondrial_genome_evolution
+# Barnacle Mitochondrial Genome Evolution
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![Python](https://img.shields.io/badge/python-3.10%2B-blue)](https://www.python.org/) [![R](https://img.shields.io/badge/R-4.3-orange)](https://www.r-project.org/) [![Status](https://img.shields.io/badge/status-draft-orange)]()
 
